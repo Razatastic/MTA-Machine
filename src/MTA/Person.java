@@ -3,33 +3,28 @@ package MTA;
 class Person {
 
     private double cashBalance; // Amount of money the person has
-    private Card mtaCard; // The individual's personal card
+    private int mtaCard; // The card's serial number - used for lookup in machine's database
 
     /**
      * Constructor
      *
      * @param cashInput amount of money user has.
-     * @param cardInput the user's personal MTA card.
      */
-    Person(int cashInput, Card cardInput) {
+    Person(int cashInput, int cardSerialNum) {
         this.cashBalance = cashInput;
-        this.mtaCard = cardInput;
+        this.mtaCard = cardSerialNum;
     }
 
-    /**
-     * Overloaded Constructor - to accept only cash if user doesn't have a card already
-     *
-     * @param cashInput amount of money user has.
-     */
     Person(int cashInput) {
         this.cashBalance = cashInput;
+        this.mtaCard = -1;
     }
 
-    Card getMtaCard() {
+    int getMtaCard() {
         return mtaCard;
     }
 
-    void setMtaCard(Card mtaCard) {
+    void setMtaCard(int mtaCard) {
         this.mtaCard = mtaCard;
     }
 

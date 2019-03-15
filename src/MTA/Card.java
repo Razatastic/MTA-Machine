@@ -1,25 +1,26 @@
 package MTA;
 
-import java.util.Date;
+//import java.util.Date;
 
 class Card {
-    private long serialNum;
+    private int serialNumber;
     private double cardBalance;
-    private Date expDate;
+//    private Date expDate;
 
-    Card() {
-        this.serialNum = (long) (Math.random() * 1000000L);
+    Card(int serialNum) {
+        this.serialNumber = serialNum;
         this.cardBalance = 0;
-        this.expDate = new Date();
+//        this.expDate = new Date();
     }
 
-    /**
-     * Calculates number of rides left on the card given the cardBalance.
-     *
-     * @return number of rides left
-     */
-    int ridesLeft() {
-        return (int) Math.floor(this.cardBalance / 2.75);
+    Card(int serialNum, double moneyAdded) {
+        this.serialNumber = serialNum;
+        this.cardBalance = moneyAdded;
+//        this.expDate = new Date();
+    }
+
+    int getSerialNumber() {
+        return serialNumber;
     }
 
     double getCardBalance() {
@@ -30,11 +31,11 @@ class Card {
         this.cardBalance = cardBalance;
     }
 
-    public Date getExpDate() {
-        return expDate;
-    }
-
-    public void setExpDate(Date expDate) {
-        this.expDate = expDate;
-    }
+//    Date getExpDate() {
+//        return expDate;
+//    }
+//
+//    void setExpDate(Date expDate) {
+//        this.expDate = expDate;
+//    }
 }
